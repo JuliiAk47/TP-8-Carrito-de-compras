@@ -1,0 +1,49 @@
+/* styles.css (o el nombre que prefieras) */
+
+/* Estilo para el contenedor principal */
+div {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+  }
+  
+  /* Estilo para el título principal */
+  h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Estilo para el título del producto */
+  h2 {
+    font-size: 20px;
+    color: #555;
+  }
+  
+  /* Estilo para el párrafo de descripción */
+  p {
+    font-size: 16px;
+    color: #777;
+    margin: 10px 0;
+  }
+  
+  /* Estilo para el precio */
+  p:nth-child(3) {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Estilo para la imagen */
+  .imagen {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
