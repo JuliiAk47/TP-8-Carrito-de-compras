@@ -26,7 +26,7 @@ const DetalleProducto = () => {
       <h2>Producto: {producto.title}</h2>
       <p>Descripcion: {producto.description}</p>
       <p>Precio: {producto.price}</p>
-    <img className="imagen" src={producto.images} alt={producto.title}></img>
+    <img className="imagen" src={producto.images?.[0]} alt={producto.title}></img>
     </div>
   );
 };
