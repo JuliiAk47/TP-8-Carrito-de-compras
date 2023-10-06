@@ -33,8 +33,8 @@ const Carrito = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">
-                <Link className='linkNavBar' to="/Productos">Productos  </Link>
-                <Link className='linkNavBar' to="/contacto">Contacto</Link>
+                <Link className='m-2' to="/Productos">Productos  </Link>
+                <Link className='m-2' to="/contacto">Contacto</Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>

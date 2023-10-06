@@ -1,6 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ListadoProducto from "../Productos/Productos";
-import { Link } from 'react-router-dom';
+import ListaProducto from "../Productos/Productos";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -8,9 +6,9 @@ const Home = () => {
   const [productos, setProductos] = useState([]);
   
   useEffect(() => {
-    let apiUrl = 'https://dummyjson.com/products';
+    let url = 'https://dummyjson.com/products';
     
-    axios.get(apiUrl)
+    axios.get(url)
       .then(response => {
         setProductos(response.data.products);
       })
@@ -21,7 +19,7 @@ const Home = () => {
 
   return (
     <>
-    <ListadoProducto tope="6" Productos={productos}></ListadoProducto>    
+    <ListaProducto tope="6" Productos={productos}></ListaProducto>    
     </>
   );
  };

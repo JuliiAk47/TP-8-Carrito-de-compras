@@ -3,29 +3,3 @@
   font-style: normal;
   margin:5px;
 }
-
-/*.carritoProductos{
-    text-align: center;
-  }
-  .carritoTableContainer{
-    margin-top: 10px;
-  }
-  .carritoTable {
-    width: 100%; 
-    border-collapse: collapse; 
-  }
-  .carrito-modal {
-    display: flex;
-    justify-content: space-between; 
-  }
-  
-  .modal-content {
-    flex: 1; 
-  }
-
-  .carritoTable th,
-  .carritoTable td {
-    padding: 8px; 
-    text-align: center; 
-    border: none; 
-  }*/

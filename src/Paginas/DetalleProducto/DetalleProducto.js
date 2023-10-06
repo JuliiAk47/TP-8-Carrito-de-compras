@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import "./DetalleProducto.css";
-//import { useCarrito } from '../Carrito/CarritoContext';
 import PropTypes from 'prop-types';
 import { CarritoContext } from "../Carrito/CarritoContext";
 import { useContext } from 'react';
