@@ -3,3 +3,9 @@
   font-style: normal;
   margin:5px;
 }
+
+.eliminarCarrito{
+  background-color: transparent;
+  color: rgb(218, 19, 19);
+  border:none;
+}

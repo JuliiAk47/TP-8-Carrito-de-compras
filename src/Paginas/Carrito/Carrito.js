@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { CarritoContext, useCarrito } from './CarritoContext';
+import { CarritoContext } from './CarritoContext';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
@@ -8,20 +8,20 @@ import './CarritoModal.css';
 
 const Carrito = () => {
   const { carrito, setCarrito } = useContext(CarritoContext);
-  const [modalAbierto, setModalAbierto] = useState(false);
+  const [modalAbierto, setModal] = useState(false);
 
   console.log("CARRITO", carrito);
 
-  const quitarProducto = (id) => {
+  const eliminarProducto = (id) => {
     setCarrito(carrito.filter((producto) => producto.id !== id));
   };
 
-  const handleComprar = () => {
-    setModalAbierto(true);
+  const comprarProductoCarrito = () => {
+    setModal(true);
   };
 
-  const handleCloseModal = () => {
-    setModalAbierto(false);
+  const cerrarModal = () => {
+    setModal(false);
   };
 
   return (
@@ -42,26 +42,18 @@ const Carrito = () => {
             <h2 style={{ color: 'black' }}>Carrito de Compras</h2>
             
               {carrito.map((producto) => (
-                <h5 style={{ color: 'black' }} key={producto.id}>
+                <h5  key={producto.id}>
                   {producto.title} - ${producto.price}
-                  <br></br><br></br><button onClick={() => quitarProducto(producto.id)}>Eliminar del Carrito</button>
+                  <br></br><br></br><button className = 'eliminarCarrito' onClick={() => eliminarProducto(producto.id)}>Eliminar del Carrito</button>
                 </h5>
               ))}
             <br></br><br></br>
-            <button
-              onClick={handleComprar}
-              style={{
-                backgroundColor: '#E74C3C',
-                color: '#FDEBD0',
-                border: 'none',
-                padding: '10px 20px',
-                fontSize: '16px',
-                cursor: 'pointer'
-              }}
+            <button className='buttonCarrito'
+              onClick={comprarProductoCarrito}
             >
               Comprar
             </button>
-            <Modal show={modalAbierto} onHide={handleCloseModal}>
+            <Modal show={modalAbierto} onHide={cerrarModal}>
               <Modal.Header closeButton>
                 <Modal.Title>Felicidades amigazo ya compraste</Modal.Title>
               </Modal.Header>

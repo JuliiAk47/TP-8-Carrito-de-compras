@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <>
-    <ListaProducto tope="6" Productos={productos}></ListaProducto>    
+    <ListaProducto Productos={productos}></ListaProducto>    
     </>
   );
  };

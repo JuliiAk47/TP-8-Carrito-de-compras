@@ -13,7 +13,6 @@ const DetalleProducto = () => {
   const context = useContext(CarritoContext);
 
   const navigate = useNavigate();
-  //const { agregarAlCarrito } = useCarrito();
 
   useEffect(() => {
     axios.get(`https://dummyjson.com/products/${id}`)
@@ -31,18 +30,17 @@ const DetalleProducto = () => {
     navigate(`/Carrito`);
 
   }
- 
+
 
   return (
     <>
     <div>
-      <h1>Detalle del Producto {id}</h1>
-      <h2>Producto: {producto.title}</h2>
+      <h2 className="m-4">Producto: {producto.title}</h2>
       <p>Descripcion: {producto.description}</p>
       <p>Precio: {producto.price}</p>
     <img className="imagen" src={producto.images?.[0]} alt={producto.title}></img>
     </div>
-    <button className="detail-button2" onClick={() => agregarAlCarrito(producto.id)}>
+    <button className="agregarCarrito" onClick={() => agregarAlCarrito(producto.id)}>
           Agregar al Carrito
         </button>
 </>
