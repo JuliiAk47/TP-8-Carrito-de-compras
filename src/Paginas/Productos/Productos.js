@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import {CarritoContext} from '../Carrito/CarritoContext';
 import { useParams } from "react-router-dom";
-
+import '../Productos/Productos.css';
 
 
 const Productos = () => {
@@ -30,9 +30,7 @@ const fetchProductos = () => {
         console.log(productos);
 };
   
-  const agregarProducto = (producto) => {
-    setCarrito([...carrito, {producto}]);
-  };
+  
   const traerProducto = (url) => {
     axios.get(url).then((res) => {
       setTotal(res.data.limit);
@@ -52,17 +50,17 @@ const fetchProductos = () => {
     <div>
       <h1>Productos</h1>
 
-      <ul id="productos">
-        <div id="total">Total: {total}</div>
+      <div className = 'listaProd' id="productos">
+        {/*<div id="total">Total: {total}</div>*/}
         {productos.map((producto, index) => (
-          <li key={index}>
+          <div key={index}>
             <Link to={`/productos/${producto.id}`}>
               <b>{producto.title}</b>              
             </Link>
-          </li>
+          </div>
         ))}
         
-      </ul>
+      </div>
 
       <input
         type="text"

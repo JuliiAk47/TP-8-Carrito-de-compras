@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import CarritoContext, { useCarrito } from './CarritoContext';
+import { CarritoContext, useCarrito } from './CarritoContext';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
@@ -10,12 +10,10 @@ const Carrito = () => {
   const { carrito, setCarrito } = useContext(CarritoContext);
   const [modalAbierto, setModalAbierto] = useState(false);
 
+  console.log("CARRITO", carrito);
+
   const quitarProducto = (id) => {
     setCarrito(carrito.filter((producto) => producto.id !== id));
-  };
-
-  const calcularTotal = () => {
-    return carrito.reduce((total, producto) => total + producto.price, 0);
   };
 
   const handleComprar = () => {
@@ -27,31 +25,29 @@ const Carrito = () => {
   };
 
   return (
-    <div className="carrito-fullscreen">
-      <div className="carrito-container">
-        <div className="carrito-header">
+    
+      <div className="container">
+        <div className="header">
           <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">FLECHA</Navbar.Brand>
+            <Navbar.Brand href="#home">Bienvenido a tu carrito</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">
-                <Link to="/">Inicio</Link>
-                <Link to="/Productos">Productos</Link>
-                <Link to="/contacto">Contacto</Link>
+                <Link className='linkNavBar' to="/Productos">Productos  </Link>
+                <Link className='linkNavBar' to="/contacto">Contacto</Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
           <div>
             <h2 style={{ color: 'black' }}>Carrito de Compras</h2>
-            <ul>
+            
               {carrito.map((producto) => (
-                <li style={{ color: 'black' }} key={producto.id}>
+                <h5 style={{ color: 'black' }} key={producto.id}>
                   {producto.title} - ${producto.price}
-                  <button onClick={() => quitarProducto(producto.id)}>Quitar del Carrito</button>
-                </li>
+                  <br></br><br></br><button onClick={() => quitarProducto(producto.id)}>Eliminar del Carrito</button>
+                </h5>
               ))}
-            </ul>
-            <h3>Total: ${calcularTotal()}</h3>
+            <br></br><br></br>
             <button
               onClick={handleComprar}
               style={{
@@ -67,14 +63,13 @@ const Carrito = () => {
             </button>
             <Modal show={modalAbierto} onHide={handleCloseModal}>
               <Modal.Header closeButton>
-                <Modal.Title>Compra Realizada</Modal.Title>
+                <Modal.Title>Felicidades amigazo ya compraste</Modal.Title>
               </Modal.Header>
-              <Modal.Body>Tu compra fue realizada con éxito.</Modal.Body>
             </Modal>
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 

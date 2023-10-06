@@ -12,6 +12,7 @@ const DetalleProducto = () => {
   const [producto, setProducto] = useState({});
   const { id } = useParams(); 
   const context = useContext(CarritoContext);
+
   const navigate = useNavigate();
   //const { agregarAlCarrito } = useCarrito();
 
@@ -27,7 +28,7 @@ const DetalleProducto = () => {
 
   const agregarAlCarrito = ()=>{
 
-    context.setListCarrito([...context.listCarrito, producto])
+    context.setCarrito([...context.carrito, producto])
     navigate(`/Carrito`);
 
   }
