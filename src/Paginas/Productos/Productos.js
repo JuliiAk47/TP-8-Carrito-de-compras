@@ -1,7 +1,9 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+
 import '../Productos/Productos.css';
+import Carrito from "../Carrito/Carrito";
 
 
 const Productos = () => {
@@ -42,8 +44,12 @@ const buscarProductos = () => {
   };
 
   return (
+    
     <div>
+      
       <h1>Productos</h1>
+      
+      <Link to={`/Carrito`}>Carrito</Link>
 
       <div className = 'listaProd' id="productos">
         {productos.map((producto, index) => (

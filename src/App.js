@@ -7,7 +7,7 @@ import Contacto from "./Paginas/Contacto/Contacto";
 import {CarritoContext} from "./Paginas/Carrito/CarritoContext";
 import Carrito from "./Paginas/Carrito/Carrito";
 const App = () => {
-  const [carrito, setCarrito] = useState([]);
+  const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem('carrito')) || []);
   return (
     <CarritoContext.Provider value = {{carrito, setCarrito}}>
     <BrowserRouter>
